@@ -2,23 +2,22 @@
 /* eslint-disable  no-console */
 
 const Alexa = require('ask-sdk');
+const _ = require("lodash");
+const axios = require("axios");
 
-const GetNewFactHandler = {
+const AddHandler = {
   canHandle(handlerInput) {
     const request = handlerInput.requestEnvelope.request;
     return request.type === 'LaunchRequest'
       || (request.type === 'IntentRequest'
-        && request.intent.name === 'GetNewFactIntent');
+        && request.intent.name === 'add');
   },
   handle(handlerInput) {
-    const factArr = data;
-    const factIndex = Math.floor(Math.random() * factArr.length);
-    const randomFact = factArr[factIndex];
-    const speechOutput = GET_FACT_MESSAGE + randomFact;
-
+    const { choreName, freq } = handlerInput.requestEnvelope.request.slots;
+    const speechOutput = "name:" + choreName + "frequency:" + freq;
     return handlerInput.responseBuilder
       .speak(speechOutput)
-      .withSimpleCard(SKILL_NAME, randomFact)
+      .withSimpleCard(choreName, freq)
       .getResponse();
   },
 };
@@ -103,7 +102,7 @@ const skillBuilder = Alexa.SkillBuilders.standard();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    GetNewFactHandler,
+    AddHandler,
     HelpHandler,
     ExitHandler,
     SessionEndedRequestHandler
