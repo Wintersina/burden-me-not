@@ -1,0 +1,61 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "buden me not",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "add",
+                    "slots": [
+                        {
+                            "name": "choreName",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "freq",
+                            "type": "AMAZON.DURATION"
+                        }
+                    ],
+                    "samples": [
+                        "menifest chore {choreName} every {freq}",
+                        "make chore {choreName} every {freq}",
+                        "add chore {choreName} every {freq}",
+                        "create chore {choreName} every {freq}"
+                    ]
+                },
+                {
+                    "name": "complete",
+                    "slots": [],
+                    "samples": [
+                        "complete chore {choreName}",
+                        "finish chore  {choreName}",
+                        "done  {choreName} chore",
+                        "finish  {choreName} chore",
+                        "chore  {choreName} done",
+                        "chore  {choreName} complete"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
