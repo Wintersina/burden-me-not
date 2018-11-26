@@ -1,16 +1,20 @@
 {
-  "name": "one-percent",
-  "version": "1.0.0",
-  "description": "Hackathon",
+  "name": "skill-sample-nodejs-fact-i18n",
+  "version": "2.0.0",
+  "description": "I18n version of fact skill.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "alexa",
+    "skill",
+    "fact"
+  ],
+  "author": "Amazon.com",
+  "license": "Apache-2.0",
   "dependencies": {
-    "npm": "^6.4.1",
-    "ask-sdk-core": "^2.0.0",
-    "ask-sdk-model": "^1.0.0"
+    "ask-sdk": "^2.0.0"
   }
 }
+
